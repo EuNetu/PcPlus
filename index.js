@@ -7,6 +7,9 @@ const flash = require("express-flash");
 const conn = require("./db/conn");
 const User = require("./models/User")
 const Post = require("./models/Post")
+const postsRoutes = require("./routes/postsRoutes");
+const authRoutes = require("./routes/authRoutes");
+const PostController = require("./controllers/PostController");
 
 const app = express();
 app.engine("handlebars", exphbs.engine());
@@ -19,6 +22,8 @@ app.use(
 );
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
+
+
 
 app.use(
   session({
@@ -39,7 +44,7 @@ app.use(
   })
 );
 
-app.use(flash())
+app.use(flash());
 
 app.use((req, res, next) => {
   if (req.session.userid) {
@@ -48,6 +53,10 @@ app.use((req, res, next) => {
 
   next()
 })
+
+app.use('/posts', postsRoutes)
+app.use('/', authRoutes)
+app.get('/', PostController.showPosts)
 
 conn
   .sync()
