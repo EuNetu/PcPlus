@@ -59,6 +59,7 @@ app.use('/', authRoutes)
 app.get('/', PostController.showPosts)
 
 conn
+  // .sync({force: true})
   .sync()
   .then(() => {
     app.listen(3000);
