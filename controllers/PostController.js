@@ -23,8 +23,13 @@ module.exports = class PostController {
 
     const posts = user.Posts.map((result) => result.dataValues)
 
+    let emptyPosts = false
 
-    res.render('posts/dashboard', {posts})
+    if(posts.length === 0){
+      emptyPosts = true
+    }
+
+    res.render('posts/dashboard', {posts, emptyPosts})
   }
   
   static createPost(req, res){
