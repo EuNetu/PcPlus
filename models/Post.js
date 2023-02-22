@@ -9,6 +9,11 @@ const Post = db.define("Post", {
     allowNull: false,
     require: true,
   },
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    require: true,
+  },
 });
 
 Post.belongsTo(User);

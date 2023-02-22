@@ -13,6 +13,4 @@ module.exports = class PostController {
   static async createPost(req, res){
     res.render('posts/create')
   }
-
-
 }
