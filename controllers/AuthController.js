@@ -9,7 +9,6 @@ module.exports = class AuthController {
   static async loginPost(req, res) {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
-    console.log(user)
     if (!user) {
       req.flash("message", "Usuário não encontrado.");
       res.redirect("/login");
@@ -17,13 +16,12 @@ module.exports = class AuthController {
     }
 
     const passwordMatch = bcrypt.compareSync(password, user.password);
-    console.log(passwordMatch);
     if (!passwordMatch) {
       req.flash("message", "Senha incorreta! Tente novamente.");
       res.redirect("/login");
       return;
     }
-    
+
     req.session.userid = user.id;
     req.flash("message", `Seja Bem-Vindo, ${user.name}!`);
     req.session.save(() => {

@@ -8,6 +8,7 @@
     {{#each posts}}
       <li>
         <span class="label">{{this.title}}</span>
+        <span class="label-description">{{this.description}}</span>
         <span class="actions">
           <a href="/posts/edit/{{this.id}}" class="btn">Editar</a>
           <form action="/posts/remove" method="POST">

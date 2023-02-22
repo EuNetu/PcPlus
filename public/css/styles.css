@@ -146,9 +146,16 @@ form input[type='submit']:hover,
 }
 
 .dashboard .label {
+  display: block;
   font-weight: bold;
   color: #2d3c92;
   margin-right: 2em;
+}
+
+.dashboard .label-description {
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 1.7em;
 }
 
 .dashboard .actions {
