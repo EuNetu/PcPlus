@@ -1,4 +1,4 @@
-const post = require('../models/Post')
+const Post = require('../models/Post')
 const User = require('../models/User')
 
 module.exports = class PostController {
@@ -10,7 +10,29 @@ module.exports = class PostController {
     res.render('posts/dashboard')
   }
   
-  static async createPost(req, res){
+  static createPost(req, res){
     res.render('posts/create')
+  }
+
+  static async createPostSave(req, res){
+
+    const post = {
+      title: req.body.title,
+      description: req.body.description,
+      UserId: req.session.userid,
+    }
+
+    try {
+      await Post.create(post)
+
+      req.flash('message', 'Seu post está no ar! :)')
+
+      req.session.save(() => {
+        res.redirect('/posts/dashboard')
+      })
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 }
