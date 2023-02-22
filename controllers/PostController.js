@@ -9,4 +9,10 @@ module.exports = class PostController {
   static async showDashboard(req, res){
     res.render('posts/dashboard')
   }
+  
+  static async createPost(req, res){
+    res.render('posts/create')
+  }
+
+
 }
