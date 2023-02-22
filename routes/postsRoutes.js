@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const PostController = require("../controllers/PostController");
 
-router.get("/dashboard", PostController.showDashboard);
+const checkAuth = require("../helpers/auth").checkAuth
+
+router.get("/add", checkAuth, PostController.createPost);
+router.get("/dashboard", checkAuth, PostController.showDashboard);
 router.get("/", PostController.showPosts);
 
 module.exports = router;

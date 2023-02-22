@@ -162,21 +162,21 @@ form input[type='submit']:hover,
 }
 
 /* CREATE / EDIT FORM */
-.tought-form-container a {
+.post-form-container a {
   color: #2d3c92;
 }
 
-.tought-form-container a:hover {
+.post-form-container a:hover {
   color: #fff;
 }
 
-.tought-form-container h1 {
+.post-form-container h1 {
   border-left: 4px solid #2d3c92;
   padding: 10px;
   margin-top: 1em;
 }
 
-.tought-form-container form {
+.post-form-container form {
   max-width: 30%;
   margin-top: 1.5em;
 }
@@ -259,20 +259,20 @@ form input[type='submit']:hover,
   color: #2d3c92;
 }
 
-.toughts-container figure {
+.posts-container figure {
   border-bottom: 1px solid #333;
   padding: 0.5em;
   max-width: 50%;
   margin: 0 auto 1em;
 }
 
-.toughts-container blockquote {
+.posts-container blockquote {
   font-style: italic;
   font-size: 2em;
   margin-bottom: 0.4em;
 }
 
-.toughts-container span {
+.posts-container span {
   color: #2d3c92;
 }
 
