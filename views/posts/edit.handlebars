@@ -1,0 +1,16 @@
+<div class="post-form-container">
+  <a href="/posts/dashboard">Voltar</a>
+  <h1>Editando postagem:</h1>
+  <form action="/posts/edit" method="POST">
+    <input type="hidden" name="id" value={{post.id}}>
+    <div class="form-control">
+        <label for="title">Título:</label>
+        <input type="text" name="title" placeholder="Digite o título" value="{{post.title}}">
+    </div>
+    <div class="form-control">
+        <label for="description">Descrição:</label>
+        <input type="text" name="description" placeholder="Digite o título" value="{{post.description}}">
+    </div>
+    <input type="submit" value="Editar">
+  </form>
+</div>

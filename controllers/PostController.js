@@ -75,4 +75,31 @@ module.exports = class PostController {
     }
   }
 
+  static async updatePost(req, res){
+    const id = req.params.id
+
+    const post = await Post.findOne({where: {id: id}, raw: true})
+
+    res.render('posts/edit', {post})
+  }
+
+  static async updatePostSave(req, res){
+    const id = req.body.id
+
+    const post = {
+      title: req.body.title,
+      description: req.body.description,
+    }
+
+    try {
+      await Post.update(post, {where: {id: id}})
+      req.flash('message', 'Você atualizou o seu post! :)')
+
+      req.session.save(() => {
+        res.redirect('/posts/dashboard')
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
