@@ -4,7 +4,10 @@ const User = require('../models/User')
 module.exports = class PostController {
 
   static async showPosts(req, res){
-    res.render('posts/home')
+    const postsData = await Post.findAll({include: User,})
+
+    const posts = postsData.map((result) => result.get({plain: true}))
+    res.render('posts/home', {posts})
   }
 
   static async showDashboard(req, res){
