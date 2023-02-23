@@ -275,8 +275,8 @@ form input[type='submit']:hover,
 
 .posts-container blockquote {
   font-style: italic;
-  font-size: 2em;
-  margin-bottom: 0.4em;
+  font-size: 1.5em;
+  margin-bottom: 0.1em;
 }
 
 .posts-container span {
