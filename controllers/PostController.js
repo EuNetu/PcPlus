@@ -35,8 +35,12 @@ module.exports = class PostController {
   }
 
   static async showDashboard(req, res) {
-    const userId = req.session.userid;
-
+    if(!req.session.userid){
+      const userId = -1
+      return
+    }
+    const userId = req.session.userid
+    
     const user = await User.findOne({
       where: { id: userId },
       include: Post,
