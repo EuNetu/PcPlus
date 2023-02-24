@@ -3,11 +3,11 @@
     <form action="/login" method="POST">
         <div class="form-control">
             <label for="email">E-mail:</label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail">
+            <input type="email" name="email" placeholder="Digite o seu e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div>
             <div class="form-control">
             <label for="password">Senha:</label>
-            <input type="password" name="password" placeholder="Digite a sua senha">
+            <input type="password" name="password" placeholder="Digite a sua senha"  pattern=".{4,8}" required>
         </div>
         <input type="submit" value="Entrar">
         <p>Não tem conta? <a href="/register">Clique aqui</a></p>
