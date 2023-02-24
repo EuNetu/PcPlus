@@ -1,42 +1,49 @@
 <div class="home-header">
-    {{#if search}}
+  {{#if search}}
     <h1>Você está buscando por: <span>{{search}}</span></h1>
-        {{#if postsQty }}
-            <p>Foram encontrados <span>{{postsQty}}</span> postagem(ns)</p>
-        {{else}}
-            <p>Nenhuma postagem relacionado a <span>{{search}}</span> foi encontrado</p>
-        {{/if}}
+    {{#if postsQty}}
+      <p>Foram encontrados <span>{{postsQty}}</span> postagem(ns)</p>
     {{else}}
-    <h1>Ache a peça que está faltando do seu <span>PC</span> aqui:</h1>
+      <p>Nenhuma postagem relacionado a
+        <span>{{search}}</span>
+        foi encontrado</p>
     {{/if}}
+  {{else}}
+    <h1>Ache a peça que está faltando do seu <span>PC</span> aqui:</h1>
+  {{/if}}
+  <form action="/" method="GET">
+    <input type="text" name="search" placeholder="Está buscando por algo?" />
+    <input type="submit" class="btn" value="Buscar" />
+  </form>
+  <div class="order-container">
+    <span>Ordenar por:</span>
     <form action="/" method="GET">
-        <input type="text" name="search" placeholder="Está buscando por algo?">
-        <input type="submit" class="btn" value="Buscar">
+      <input type="hidden" name="search" value="{{this.search}}" />
+      <input type="hidden" name="order" value="new" />
+      <button type="submit"><i class="bi bi-arrow-up"></i> Mais novos</button>
     </form>
-    <div class="order-container">
-        <span>Ordenar por:</span>  
-        <form action="/" method="GET">
-            <input type="hidden" name="search" value="{{this.search}}">
-            <input type="hidden" name="order" value="new">
-            <button type="submit"><i class="bi bi-arrow-up"></i> Mais novos</button>
-        </form>
-        <form action="/" method="GET">
-            <input type="hidden" name="search" value="{{this.search}}">
-            <input type="hidden" name="order" value="old">
-            <button type="submit"><i class="bi bi-arrow-down"></i> Mais antigos</button>
-        </form>
-        <a href="/">Limpar</a>
-    </div>
+    <form action="/" method="GET">
+      <input type="hidden" name="search" value="{{this.search}}" />
+      <input type="hidden" name="order" value="old" />
+      <button type="submit"><i class="bi bi-arrow-down"></i>
+        Mais antigos</button>
+    </form>
+    <a href="/">Limpar</a>
+  </div>
 </div>
 <div class="posts-container">
-    {{#each posts}}
-        <figure>
-            <blockquote>
-                {{this.title}}
-            </blockquote>
-            <figcaption>{{this.description}}</figcaption>
-            <figcaption>Por <span>{{this.User.name}}</span></figcaption>
-            <figcaption>Contato <span><a href="https://wa.me/55{{this.User.code_area}}{{this.User.phone}}">({{this.User.code_area}}) {{this.User.phone}}</a></span></figcaption>
-        </figure>
-    {{/each}}
+  {{#each posts}}
+    <div class="container">
+
+      <div class="card w-100">
+      <div class="card-header">Por {{this.User.name}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">Com suporte a texto embaixo, que funciona como
+            uma introdução a um conteúdo adicional.</p>
+          <span><a class="btn" href="https://wa.me/55{{this.User.code_area}}{{this.User.phone}}">({{this.User.code_area}}) {{this.User.phone}}</a></span>
+        </div>
+      </div>
+    </div>
+  {{/each}}
 </div>

@@ -1,4 +1,4 @@
-* {
+* , p{
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -13,7 +13,6 @@
 
 #navbar {
   padding: 1.2em 2.4em;
-  margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,7 +53,7 @@
   max-width: 60%;
 }
 
-.container {
+.main-container {
   min-height: 60vh;
   padding: 2em;
 }
@@ -272,22 +271,32 @@ form input[type='submit']:hover,
   color: #2d3c92;
 }
 
-.posts-container figure {
-  border-bottom: 1px solid #333;
+.posts-container .container {
   padding: 0.5em;
   max-width: 50%;
   margin: 0 auto 1em;
 }
 
-.posts-container blockquote {
+.posts-container .card-header {
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1em;
   margin-bottom: 0.1em;
+  background: #222;
 }
 
 .posts-container span, 
 .posts-container span a{
   color: #2d3c92;
+}
+
+.card{
+  background-color: #545b62;
+}
+
+form input[type='submit'], .btn {
+  margin: 1.8em 0 0.5em;
+  font-size: 0.8em;
+  border: 0.3px solid #2d3c92;
 }
 
 /* FOOTER */
