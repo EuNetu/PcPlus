@@ -23,6 +23,7 @@ module.exports = class AuthController {
     }
 
     req.session.userid = user.id;
+    req.session.user = user.name;
     req.flash("message", `Seja Bem-Vindo, ${user.name}!`);
     req.session.save(() => {
       res.redirect("/");
@@ -71,6 +72,7 @@ module.exports = class AuthController {
       const createdUser = await User.create(user);
 
       req.session.userid = createdUser.id;
+      req.session.user = user.name;
       req.flash("message", "Cadastro realizado com sucesso.");
 
       req.session.save(() => {

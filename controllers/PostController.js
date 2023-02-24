@@ -79,7 +79,7 @@ module.exports = class PostController {
       req.flash("message", "Seu post está no ar! :)");
 
       req.session.save(() => {
-        res.redirect("/posts/dashboard");
+        res.redirect("/");
       });
     } catch (error) {
       console.log(error);

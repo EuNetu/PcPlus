@@ -35,7 +35,8 @@
                 {{this.title}}
             </blockquote>
             <figcaption>{{this.description}}</figcaption>
-            <figcaption>por <span>{{this.User.name}}</span></figcaption>
+            <figcaption>Por <span>{{this.User.name}}</span></figcaption>
+            <figcaption>Contato <span><a href="https://wa.me/55{{this.User.code_area}}{{this.User.phone}}">({{this.User.code_area}}) {{this.User.phone}}</a></span></figcaption>
         </figure>
     {{/each}}
 </div>

@@ -285,7 +285,8 @@ form input[type='submit']:hover,
   margin-bottom: 0.1em;
 }
 
-.posts-container span {
+.posts-container span, 
+.posts-container span a{
   color: #2d3c92;
 }
 

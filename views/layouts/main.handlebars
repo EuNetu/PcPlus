@@ -23,7 +23,8 @@
       <ul>
         <li><a href="/">Postagens</a></li>
         {{#if session.userid}}
-          <li><a href="/posts/dashboard">Dashboard</a></li>
+          <li><a href="/posts/dashboard">Criar Post</a></li>
+          <li><a href="/posts/dashboard">{{session.user}}</a></li>
           <li><a href="/logout">Sair</a></li>
         {{else}}
           <li><a href="/login">Entrar</a></li>
