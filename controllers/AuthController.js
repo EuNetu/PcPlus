@@ -34,7 +34,7 @@ module.exports = class AuthController {
   }
 
   static async registerPost(req, res) {
-    const { name, email, password, confirmpassword } = req.body;
+    const { name, email, phoneComplete, password, confirmpassword } = req.body;
     if (password != confirmpassword) {
       req.flash(
         "message",
@@ -51,13 +51,20 @@ module.exports = class AuthController {
       res.render("auth/register");
       return;
     }
-
+    console.log(typeof phoneComplete)
+    console.log(phoneComplete)
+    const code_area = phoneComplete.substring(3, 1)
+    console.log(code_area)
+    const phone = phoneComplete.substring(phoneComplete.indexOf(" ") + 1).replace('-','');
+    console.log(phone)
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(password, salt);
 
     const user = {
       name,
       email,
+      code_area,
+      phone,
       password: hashedPassword,
     };
     try {
