@@ -18,25 +18,83 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/css/styles.css" />
+
     <title>PcPlus</title>
   </head>
   <body>
-    <nav id="navbar">
-      <a href="/" id="logo">
+    <nav id="navbar" class="navbar navbar-expand-lg">
+      <a class="navbar-brand" id="logo" href="/">
         <img src="/img/PCPLUS.png" alt="logo Pc Plus" />
       </a>
-      <ul>
-        <li><a href="/">Postagens</a></li>
-        {{#if session.userid}}
-          <li><a href="/posts/dashboard">Criar Post</a></li>
-          <li><a href="/posts/dashboard">{{session.user}}</a></li>
-          <li><a href="/logout">Sair</a></li>
-        {{else}}
-          <li><a href="/login">Entrar</a></li>
-          <li><a href="/register">Registrar</a></li>
-        {{/if}}
-      </ul>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Alterna navegação"
+      >
+        <i class="bi bi-caret-down"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Postagens</a>
+          </li>
+          {{#if session.userid}}
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/add">Criar postagem</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {{session.user}}
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="/posts/dashboard">Perfil</a>
+                <a class="dropdown-item" href="/posts/dashboard">Dashboard</a>
+                <a class="dropdown-item" href="/logout">Sair</a>
+              </div>
+            </li>
+          {{else}}
+            <li class="nav-item"><a
+                class="nav-link"
+                href="/login"
+              >Entrar</a></li>
+            <li class="nav-item"><a
+                class="nav-link"
+                href="/register"
+              >Registrar</a></li>
+          {{/if}}
+        </ul>
+      </div>
     </nav>
     {{#if messages.message}}
       <div class="message">

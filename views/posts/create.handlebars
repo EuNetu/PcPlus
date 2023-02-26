@@ -1,15 +1,17 @@
-<div class="post-form-container">
-  <a href="/posts/dashboard">Voltar</a>
-    <h1>Crie seu post:</h1>
+<div class="container-create">
+    <h2>Crie seu post:</h1>
     <form action="/posts/add" method="POST">
-        <div class="form-control">
+        <div class="form-control-v2">
             <label for="title">Título:</label>
             <input type="text" name="title" placeholder="Digite o título">
         </div>
-        <div class="form-control">
+        <div class="form-control-v2">
             <label for="description">Descrição:</label>
             <input type="text" name="description" placeholder="Digite a descrição">
         </div>
-        <input type="submit" value="Postar">
+        <div class="form-control-btns">
+            <a href="/posts/dashboard" class="btn">Cancelar</a>
+            <input type="submit" value="Postar">
+        </div>   
     </form>
 </div>
