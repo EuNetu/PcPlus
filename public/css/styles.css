@@ -223,6 +223,24 @@ form input[type='submit']:hover,
   margin: 0 0.5em;
 }
 
+.container .card-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.container .card-bottom .form-control-btns{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-control-btns .btn{
+  margin: 0.8em 0;
+  padding: 0.5em 6em;
+}
+
+.form-control-btns:first-child(0):hover{
+  background-color: #770000;
+}
+
 /* CREATE / EDIT FORM */
 .post-form-container a {
   color: #2d3c92;

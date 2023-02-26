@@ -4,21 +4,24 @@
     <a href="/posts/add" class="btn">Criar Post</a>
   </div>
   <h3>Seus posts:</h3>
-  <ul>
+  <div class="posts-container">
     {{#each posts}}
-      <li>
-        <span class="label">{{this.title}}</span>
-        <span class="label-description">{{this.description}}</span>
-        <span class="actions">
-          <a href="/posts/edit/{{this.id}}" class="btn">Editar</a>
-          <form action="/posts/remove" method="POST">
-            <input type="hidden" name="id" value="{{this.id}}" />
-            <input type="submit" value="Excluir" class="btn" />
-          </form>
-        </span>
-      </li>
+      <div class="container">
+        <div class="card w-100">
+          <div class="card-body">
+            <h5 class="card-text">Título: {{this.title}}</h5>
+            <p class="card-text">Descrição: {{this.description}}</p>
+          </div>
+          <div class="card-bottom">
+            <div class="form-control-btns">
+              <a href="/posts/dashboard" class="btn">Editar</a>
+              <a href="/posts/dashboard" class="btn">Excluir</a>
+            </div>
+          </div>
+        </div>
+      </div>
     {{/each}}
-  </ul>
+  </div>
   {{#if emptyPosts}}
     <p>Ainda não há nenhum pensamento cadastrado, crie o seu
       <a href="/posts/add">clicando aqui</a></p>
