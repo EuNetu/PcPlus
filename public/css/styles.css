@@ -237,9 +237,6 @@ form input[type='submit']:hover,
   padding: 0.5em 6em;
 }
 
-.form-control-btns:first-child(0):hover{
-  background-color: #770000;
-}
 
 /* CREATE / EDIT FORM */
 .post-form-container a {

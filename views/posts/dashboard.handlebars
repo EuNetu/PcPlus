@@ -14,8 +14,11 @@
           </div>
           <div class="card-bottom">
             <div class="form-control-btns">
-              <a href="/posts/dashboard" class="btn">Editar</a>
-              <a href="/posts/dashboard" class="btn">Excluir</a>
+              <a href="/posts/edit/{{this.id}}" class="btn">Editar</a>
+              <form action="/posts/remove" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}" />
+                <input type="submit" value="Excluir" class="btn" />
+              </form>
             </div>
           </div>
         </div>
