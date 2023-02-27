@@ -19,7 +19,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #2d3c92;
+  background-color: #1b1b2b;
   border-radius: 50%;
   border: 3px solid transparent;
 }
@@ -44,7 +44,7 @@ h2{
 /* NAVBAR */
 #logo img {
   height: 2.8em;
-  background-color: #111122;
+  background-color: #1b1b2b;
 }
 
 #navbar {
@@ -52,10 +52,9 @@ h2{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111122;
+  background-color: #1b1b2b;
   color: #fff;
-  border-bottom: 1px solid #2d3c92;
-  box-shadow: rgb(255, 255, 255) 5px -4px 10px 1px;
+  box-shadow: #4f4f4f 5px -4px 10px 1px;
 }
 
 #navbar button {
@@ -66,7 +65,7 @@ h2{
 #navbar ul {
   display: flex;
   list-style: none;
-  background-color: #111122;
+  background-color: #1b1b2b;
 }
 
 #navbar ul li {
@@ -79,7 +78,7 @@ h2{
   color: #fff;
   transition: 0.5s;
   font-weight: bold;
-  background-color: #111122;
+  background-color: #1b1b2b;
 }
 
 #navbar ul li a:hover {
@@ -92,7 +91,7 @@ h2{
   padding: 0.1em 0em 0.1em 0.5em;
   margin-right: 3em;
   position: absolute;
-  left: -50px;
+  left: -12px;
 }
 
 #navbar .navbar-nav .dropdown-menu a{
@@ -100,7 +99,7 @@ h2{
   border-radius: 1em;
   padding: 0.1em 0.5em;
   margin: 0.2em;
-  
+  width: auto;
 }
 
 
@@ -194,15 +193,22 @@ form input[type='submit']:hover,
  }
 
 /* DASHBOARD */
+.container-empty-posts{
+  margin: 0 0 0 11.5em;
+}
+
 .title-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5em;
+  max-width: 67%;
+  margin: 0 auto;
+  flex-direction: column;
 }
 
 .title-container h2 {
   border-left: 4px solid #2d3c92;
   padding: 10px;
+  margin: 0 0 1.5em;
 }
 
 .dashboard h3 {
@@ -249,6 +255,13 @@ form input[type='submit']:hover,
   margin: 0 0.5em;
 }
 
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  box-shadow: #242424 0px -1px 6px 1px;
+}
+
 .container .card-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.125);
 }
@@ -264,24 +277,41 @@ form input[type='submit']:hover,
 }
 
 
-/* CREATE / EDIT FORM */
-.post-form-container a {
-  color: #2d3c92;
+/*  EDIT FORM */
+.container-edit{
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.post-form-container a:hover {
+.container-edit h2{
+  margin-bottom: 1em;
   color: #fff;
-}
-
-.post-form-container h1 {
   border-left: 4px solid #2d3c92;
-  padding: 10px;
-  margin-top: 1em;
+  padding: 0.3em;
 }
 
-.post-form-container form {
-  max-width: 30%;
-  margin-top: 1.5em;
+.container-edit .form-control-btns{
+  display: flex;
+  margin-top: 1.8em;
+}
+
+.container-edit .form-control-btns .btn{
+  margin: 0;
+  padding: 1em 1.5em;
+}
+.container-edit .form-control-btns input{
+  margin: 0 0 0 0.5em;
+  padding: 1em 2em;
+}
+
+.container-edit .form-control-btns a:hover{
+  background-color: #2d3c92;
+  border-color: #141b41;
+}
+.container-edit .form-control-btns input:hover{
+  background-color: #141b41;
 }
 
 /* HOME */
@@ -418,8 +448,9 @@ form input[type='submit'], .btn {
   padding: 1em 2em;
 }
 
-.container-create .form-control-btns a:hover{
+.container-create .form-control-btns .btn:hover{
   background-color: #2d3c92;
+  border-color: #141b41;
 }
 .container-create .form-control-btns input:hover{
   background-color: #141b41;
@@ -427,22 +458,24 @@ form input[type='submit'], .btn {
 
 /* FOOTER */
 footer {
-  height: 9%;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 0.1px solid #2d3c92;
-  background-color: #222;
+  background-color: #161616;
+  box-shadow: #4f4f4f 2px 5px 8px 1px;
 }
 
-footer p{
+footer p, footer strong {
   font-size: 1em;
+  background-color: #161616;
 }
 
 footer span {
   font-weight: bold;
   color: #2d3c92;
   margin-right: 0.3em;
+  background-color: #161616;
 }
 
 @media (min-width: 992px) {
@@ -452,12 +485,12 @@ footer span {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
     justify-content: flex-end;
-    background-color: #111122;
+    background-color: #1b1b2b;
   }
   .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
-    background-color: #111122;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: #1b1b2b;
+    box-shadow: rgb(0 0 0 / 30%) 0px -4px 16px, rgb(0 0 0 / 2%) 0px 15px 12px;
     padding-right: 0.3em;
   }
 }

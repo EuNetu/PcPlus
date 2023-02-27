@@ -1,8 +1,8 @@
 <div class="dashboard">
   <div class="title-container">
     <h2>Dashboard</h2>
-  </div>
   <h3>Seus posts:</h3>
+  </div>
   <div class="posts-container">
     {{#each posts}}
       <div class="container">
@@ -25,7 +25,10 @@
     {{/each}}
   </div>
   {{#if emptyPosts}}
-    <p>Ainda não há nenhum pensamento cadastrado, crie o seu
+    <div class="container-empty-posts">
+      <p>Você não criou nenhum post ainda, crie um agora mesmo
       <a href="/posts/add">clicando aqui</a></p>
+    </div>
+
   {{/if}}
 </div>
