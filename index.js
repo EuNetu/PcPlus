@@ -9,6 +9,7 @@ const User = require("./models/User")
 const Post = require("./models/Post")
 const postsRoutes = require("./routes/postsRoutes");
 const authRoutes = require("./routes/authRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 const PostController = require("./controllers/PostController");
 
 const app = express();
@@ -51,8 +52,8 @@ app.use((req, res, next) => {
 
   next()
 })
-
 app.use('/posts', postsRoutes)
+app.use('/', profileRoutes)
 app.use('/', authRoutes)
 app.get('/', PostController.showPosts)
 

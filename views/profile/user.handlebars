@@ -1,0 +1,55 @@
+<div class="container-profile">
+  <h2>Seu Perfil</h2>
+  <p>Altere os dados do campo e insira sua senha. </br>
+  Depois só clicar em salvar.</p>
+  {{#with user}}
+    <form action="/profile" method="POST">
+      <div class="form-control-v2">
+        <label for="name">Nome:</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Digite o seu novo nome"
+          value="{{this.name}}"
+          required
+        />
+      </div>
+      <div class="form-control-v2">
+        <label for="email">E-mail: </label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Digite o seu e-mail"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          value="{{this.email}}"
+          disabled
+        />
+      </div>
+      <div class="form-control-v2">
+        <label for="phoneComplete">DDD + telefone:</label>
+        <input
+          type="tel"
+          name="phoneComplete"
+          class="phone"
+          placeholder="Ex: 84998745721"
+          pattern=".{13,15}"
+          value="({{this.code_area}}) {{this.phone}}"
+          required
+        />
+      </div>
+      <div class="form-control-v2">
+        <label for="password">Senha de confirmação:</label>
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="Sua senha" 
+          required
+        />
+      </div>
+    <div class="form-control-btns">
+      <a href="/" class="btn">Cancelar</a>
+      <input type="submit" value="Salvar">
+    </div> 
+    </form>
+  {{/with}}
+</div>
