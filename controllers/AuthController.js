@@ -52,8 +52,10 @@ module.exports = class AuthController {
       res.render("auth/register");
       return;
     }
-    const code_area = phoneComplete.substring(3, 1)
-    const phone = phoneComplete.substring(phoneComplete.indexOf(" ") + 1).replace('-','');
+    const code_area = phoneComplete.substring(3, 1);
+    const phone = phoneComplete
+      .substring(phoneComplete.indexOf(" ") + 1)
+      .replace("-", "");
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(password, salt);
 

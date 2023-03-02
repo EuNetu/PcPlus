@@ -1,7 +1,7 @@
-const Post = require('../models/Post')
-const User = require('../models/User')
+const Post = require("../models/Post");
+const User = require("../models/User");
 
-const {Op} = require('sequelize')
+const { Op } = require("sequelize");
 
 module.exports = class PostController {
   static async showPosts(req, res) {
@@ -11,9 +11,9 @@ module.exports = class PostController {
       search = req.query.search;
     }
 
-    let order = 'DESC'
+    let order = "DESC";
 
-    req.query.order === 'old' ? order = 'ASC' : order = 'DESC';
+    req.query.order === "old" ? (order = "ASC") : (order = "DESC");
 
     const postsData = await Post.findAll({
       include: User,
@@ -24,22 +24,22 @@ module.exports = class PostController {
     });
 
     const posts = postsData.map((result) => result.get({ plain: true }));
-   
-    let postsQty = posts.length
+
+    let postsQty = posts.length;
 
     if (postsQty === 0) {
-      postsQty = false
+      postsQty = false;
     }
 
     res.render("posts/home", { posts, search, postsQty });
   }
 
   static async showDashboard(req, res) {
-    if(!req.session.userid){
-      const userId = -1
-      return
+    if (!req.session.userid) {
+      const userId = -1;
+      return;
     }
-    const userId = req.session.userid
+    const userId = req.session.userid;
 
     const user = await User.findOne({
       where: { id: userId },

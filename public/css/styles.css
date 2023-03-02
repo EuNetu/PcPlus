@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Inter:wght@100;400;700&family=Rajdhani:wght@600&display=swap');
-@font-face {
-  font-family: abode;
-  src: url(../fonts/valorant/Valorant\ Font.ttf)
-}
 
 * {
   scrollbar-width: thin;
   scrollbar-color: #2d3c92 transparent;
 }
 
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 5px;
 }
@@ -24,7 +19,9 @@
   border: 3px solid transparent;
 }
 
-* , p, body{
+*,
+p,
+body {
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -33,11 +30,12 @@
   font-family: 'Comfortaa', cursive;
 }
 
-h1, h1 span{
+h1,
+h1 span {
   font-weight: 600;
 }
 
-h2{
+h2 {
   font-weight: 600;
 }
 
@@ -94,7 +92,7 @@ h2{
   left: -50px;
 }
 
-#navbar .navbar-nav .dropdown-menu a{
+#navbar .navbar-nav .dropdown-menu a {
   font-size: 1em;
   border-radius: 1em;
   padding: 0.1em 0.5em;
@@ -102,7 +100,7 @@ h2{
   width: auto;
 }
 
-.bi-caret-down{
+.bi-caret-down {
   background-color: #1b1b2b;
 }
 
@@ -111,7 +109,8 @@ h2{
   background-color: #1b1b2b;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus,
+.dropdown-item:hover {
   background-color: unset;
 }
 
@@ -182,8 +181,6 @@ form input[type='submit'],
   text-decoration: none;
 }
 
-
-
 form input[type='submit']:hover,
 .btn:hover {
   background-color: #2d3c92;
@@ -196,12 +193,12 @@ form input[type='submit']:hover,
   border: 1px solid #ff0000;
 }
 
-.container-auth .btn-login{ 
+.container-auth .btn-login {
   margin: 0 0 1.5em;
- }
+}
 
 /* DASHBOARD */
-.container-empty-posts{
+.container-empty-posts {
   margin: 0 0 0 11.5em;
 }
 
@@ -274,51 +271,53 @@ form input[type='submit']:hover,
   border-top: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.container .card-bottom .form-control-btns{
+.container .card-bottom .form-control-btns {
   display: flex;
   justify-content: space-evenly;
 }
 
-.form-control-btns .btn{
+.form-control-btns .btn {
   margin: 0.8em 0;
   padding: 0.5em 6em;
 }
 
 
 /*  EDIT FORM */
-.container-edit{
+.container-edit {
   max-width: 450px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-.container-edit h2{
+.container-edit h2 {
   margin-bottom: 1em;
   color: #fff;
   border-left: 4px solid #2d3c92;
   padding: 0.3em;
 }
 
-.container-edit .form-control-btns{
+.container-edit .form-control-btns {
   display: flex;
   margin-top: 1.8em;
 }
 
-.container-edit .form-control-btns .btn{
+.container-edit .form-control-btns .btn {
   margin: 0;
   padding: 1em 1.5em;
 }
-.container-edit .form-control-btns input{
+
+.container-edit .form-control-btns input {
   margin: 0 0 0 0.5em;
   padding: 1em 2em;
 }
 
-.container-edit .form-control-btns a:hover{
+.container-edit .form-control-btns a:hover {
   background-color: #2d3c92;
   border-color: #141b41;
 }
-.container-edit .form-control-btns input:hover{
+
+.container-edit .form-control-btns input:hover {
   background-color: #141b41;
 }
 
@@ -413,28 +412,30 @@ form input[type='submit']:hover,
   background: #222;
 }
 
-.posts-container span, 
-.posts-container span a{
+.posts-container span,
+.posts-container span a {
   color: #2d3c92;
 }
 
-.card{
+.card {
   background-color: #545b62;
 }
 
-form input[type='submit'], .btn {
+form input[type='submit'],
+.btn {
   margin: 1.8em 0 0.5em;
   font-size: 0.8em;
   border: 0.3px solid #2d3c92;
 }
 
 /* Criar post */
-.container-create{
+.container-create {
   max-width: 450px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
+
 .container-create h2 {
   margin-bottom: 1em;
   color: #fff;
@@ -442,25 +443,27 @@ form input[type='submit'], .btn {
   padding: 0.3em;
 }
 
-.container-create .form-control-btns{
+.container-create .form-control-btns {
   display: flex;
   margin-top: 1.8em;
 }
 
-.container-create .form-control-btns .btn{
+.container-create .form-control-btns .btn {
   margin: 0;
   padding: 1em 1.5em;
 }
-.container-create .form-control-btns input{
+
+.container-create .form-control-btns input {
   margin: 0 0 0 0.5em;
   padding: 1em 2em;
 }
 
-.container-create .form-control-btns .btn:hover{
+.container-create .form-control-btns .btn:hover {
   background-color: #2d3c92;
   border-color: #141b41;
 }
-.container-create .form-control-btns input:hover{
+
+.container-create .form-control-btns input:hover {
   background-color: #141b41;
 }
 
@@ -488,25 +491,27 @@ form input[type='submit'], .btn {
   color: #2d3c92;
 }
 
-.container-profile .form-control-btns{
+.container-profile .form-control-btns {
   display: flex;
   margin-top: 1.8em;
 }
 
-.container-profile .form-control-btns .btn{
+.container-profile .form-control-btns .btn {
   margin: 0;
   padding: 1em 1.5em;
 }
-.container-profile .form-control-btns input{
+
+.container-profile .form-control-btns input {
   margin: 0 0 0 0.5em;
   padding: 1em 2em;
 }
 
-.container-profile .form-control-btns .btn:hover{
+.container-profile .form-control-btns .btn:hover {
   background-color: #2d3c92;
   border-color: #141b41;
 }
-.container-profile .form-control-btns input:hover{
+
+.container-profile .form-control-btns input:hover {
   background-color: #141b41;
 }
 
@@ -520,7 +525,8 @@ footer {
   box-shadow: #4f4f4f 2px 5px 8px 1px;
 }
 
-footer p, footer strong {
+footer p,
+footer strong {
   font-size: 1em;
   background-color: #161616;
 }
@@ -541,6 +547,7 @@ footer span {
     justify-content: flex-end;
     background-color: #1b1b2b;
   }
+
   .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
     background-color: #1b1b2b;
@@ -566,5 +573,5 @@ footer span {
 @media (max-width: 355px) {
   #navbar {
     flex-direction: column;
-}
+  }
 }

@@ -5,8 +5,7 @@ function maskPhone(phone) {
   return phone;
 }
 
-$('.phone').blur(function(event) {
-  let phoneNumber = $(this).val()
-  $(this).val(maskPhone(phoneNumber))
+$(".phone").blur(function (event) {
+  let phoneNumber = $(this).val();
+  $(this).val(maskPhone(phoneNumber));
 });
-

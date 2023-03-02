@@ -16,7 +16,7 @@ const User = db.define("User", {
   code_area: {
     type: DataTypes.STRING,
     allowNull: false,
-    require: true,   
+    require: true,
   },
   phone: {
     type: DataTypes.STRING,

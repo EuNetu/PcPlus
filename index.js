@@ -5,8 +5,8 @@ const FileStore = require("session-file-store")(session);
 const flash = require("express-flash");
 
 const conn = require("./db/conn");
-const User = require("./models/User")
-const Post = require("./models/Post")
+const User = require("./models/User");
+const Post = require("./models/Post");
 const postsRoutes = require("./routes/postsRoutes");
 const authRoutes = require("./routes/authRoutes");
 const profileRoutes = require("./routes/profileRoutes");
@@ -23,8 +23,6 @@ app.use(
 );
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-
-
 
 app.use(
   session({
@@ -47,15 +45,15 @@ app.use(flash());
 
 app.use((req, res, next) => {
   if (req.session.userid) {
-    res.locals.session = req.session
+    res.locals.session = req.session;
   }
 
-  next()
-})
-app.use('/posts', postsRoutes)
-app.use('/', profileRoutes)
-app.use('/', authRoutes)
-app.get('/', PostController.showPosts)
+  next();
+});
+app.use("/posts", postsRoutes);
+app.use("/", profileRoutes);
+app.use("/", authRoutes);
+app.get("/", PostController.showPosts);
 
 conn
   // .sync({force: true})

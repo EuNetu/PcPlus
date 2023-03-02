@@ -1,5 +1,5 @@
-$( "input" ).click(function() {
+$("input").click(function () {
   $(this).blur(() => {
-    $(this).addClass( "input-check" );
+    $(this).addClass("input-check");
   });
 });
